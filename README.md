@@ -19,4 +19,4 @@ This is a simple React-based GPA calculator that allows students to add subjects
 - Ant Design (for UI components like `Select`, `Input`, `Button`, `Checkbox`)
 - LocalStorage (for persistent data saving)
 
-
+![image](https://github.com/user-attachments/assets/139032a8-2bdf-42d8-9bcd-c906718d6f1f)
