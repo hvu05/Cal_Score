@@ -1,15 +1,22 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Select, Input, Button, Checkbox } from 'antd';
 import './Page.css'
 function Page() {
     const [score, setScore] = useState(0)
     const [show, setShow] = useState(false)
-    const [subject, setSubject] = useState([])
-    const [ChenhLech, setChenhLech] = useState(0)
+    // const [subject, setSubject] = useState([])
+    const [subject, setSubject] = useState(() => {
+        const saved = localStorage.getItem("subjects");
+        return saved ? JSON.parse(saved) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("subjects", JSON.stringify(subject));
+    }, [subject]);
 
     const addSubject = (is_sub) => {
-        if (is_sub) setSubject([...subject, { id: Date.now(), score: 0, credit: 0 }])
-        else setSubject([...subject, { id: Date.now(), score: -1, credit: -1 }])
+        if (is_sub) setSubject([...subject, { id: Date.now(), name: "", score: 0, credit: 0 }])
+        else setSubject([...subject, { id: Date.now(), name: "", score: -1, credit: -1 }])
     }
     const updateScore = (index, newScore) => {
         const updated = [...subject]
@@ -19,6 +26,11 @@ function Page() {
     const updateCredit = (index, newCredit) => {
         const updated = [...subject]
         updated[index] = { ...updated[index], credit: newCredit }
+        setSubject(updated)
+    }
+    const updateName = (index, newName) => {
+        const updated = [...subject]
+        updated[index] = {...updated[index], name: newName}
         setSubject(updated)
     }
     const showValue = () => {
@@ -32,7 +44,7 @@ function Page() {
         })
         var GPA = sumScore / sumCredit
 
-        setChenhLech(score - GPA)
+        // setChenhLech(score - GPA)
         setScore(GPA)
         setShow(true)
     }
@@ -56,6 +68,7 @@ function Page() {
         { value: 2, label: '2 tín chỉ' },
         { value: 1, label: '1 tín chỉ' },
     ]
+
     return (
         <>
             <Button type="primary" onClick={() => addSubject(true)} className="buttonAdd">Thêm môn học</Button>
@@ -66,10 +79,11 @@ function Page() {
                 (sub.score !== -1) ? (
                     <div key={sub.id} className="subject">
                         <label style={{ marginRight: '8px' }}>Tên môn:</label>
-                        <Input placeholder="Tên môn học" className="subjectName" />
+                        <Input placeholder="Tên môn học" className="subjectName" value={sub.name} onChange={(e) => updateName(index, e.target.value)}/>
 
                         <span className="score">
-                            <Select
+                            <Select 
+                                value={sub.score}
                                 style={{ width: 100 }}
                                 showSearch
                                 placeholder="A (4.00)"
@@ -80,6 +94,7 @@ function Page() {
                         </span>
 
                         <Select
+                            value={sub.credit}
                             className="credit"
                             style={{ width: 100 }}
                             showSearch
@@ -94,7 +109,7 @@ function Page() {
                     </div>
                 ) : (
                     <div key={sub.id} className="TaoHocKi">
-                        <Input className="HocKi" placeholder="Học kì" />
+                        <Input className="HocKi" placeholder="Học kì"/>
                         <Button color="danger" variant="solid" className="deleteHK" onClick={() => HandleDelete(sub.id)}>Delete</Button>
                     </div>
                 )
