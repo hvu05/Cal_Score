@@ -1,0 +1,35 @@
+.buttonAdd{
+   margin: 10px 10px;
+   transition: transform 0.2s ease-in-out;
+}
+.buttonAdd:hover{
+    transform: scale(1.05);
+}
+.delete{
+    transition: transform 0.2s ease-in-out;
+    margin-right: 10px;
+}
+.delete:hover{
+    transform: scale(1.05);
+}
+.subjectName{
+    width: 200px;
+    display: inline-block;
+    margin-right: 12px;    
+}
+.score{
+    margin-right: 10px;
+}
+.credit{
+    margin-right: 10px;
+}
+.subject{
+    margin-top: 5px;
+}
+.TaoHocKi{
+    display: flex;
+    margin-top: 20px;
+}
+.HocKi{
+    width: 120px;
+}
