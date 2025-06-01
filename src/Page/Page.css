@@ -1,9 +1,17 @@
-.buttonAdd{
+.calScore{
    margin: 10px 10px;
    transition: transform 0.2s ease-in-out;
 }
-.buttonAdd:hover{
+.calScore:hover{
     transform: scale(1.05);
+}
+.menu {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* đảm bảo menu nổi trên các thành phần khác */
+  background-color: white; /* hoặc màu bạn muốn, để không bị trong suốt */
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* tạo hiệu ứng đổ bóng nhẹ */
 }
 .delete{
     transition: transform 0.2s ease-in-out;
@@ -32,4 +40,11 @@
 }
 .HocKi{
     width: 120px;
+}
+.GPA{
+    /* margin-bottom: 50px; */
+    /* margin: 50px 50px; */
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: large;
 }
