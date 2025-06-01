@@ -25,6 +25,7 @@ git clone
 cd cal-score
 npm install
 npm start
+```
 
 ## Usage
 - Click "Tạo học kì" to add a new semester.
