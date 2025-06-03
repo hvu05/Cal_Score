@@ -1,37 +1,21 @@
-# 🎓 GPA Calculator by Semester
+# GPA Calculator Web App
 
-A simple React app that allows users to create semesters, add subjects, input grades and credits, and calculate GPA dynamically. The app persists data in `localStorage`.
+A simple web application that helps users manage subjects and calculate GPA based on credit hours and grades. Data is stored locally using the browser's `localStorage`.
 
-## 🚀 Features
+## 🧠 Features
 
-- Add and manage multiple semesters and subjects
-- Choose subject grades (e.g., A, B+, etc.) and credits
-- Calculate GPA based only on valid subject entries
-- Delete individual subjects or entire semesters
-- Data saved in browser using `localStorage`
-- Responsive and clean UI using [Ant Design](https://ant.design)
+- 🗓️ Create semesters and add subjects under each semester.
+- 📝 Input subject name, select grade (4.0 scale), and number of credits.
+- 📊 Calculate GPA and total accumulated credits.
+- 🗑️ Delete individual subjects or entire semesters.
+- 💾 Data is automatically saved to `localStorage`.
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies Used
 
-- React (with Hooks)
-- Ant Design UI library
-- CSS styling
-- JavaScript (ES6)
+- ReactJS (with Hooks: `useState`, `useEffect`)
+- Ant Design (UI Components)
+- SCSS for styling
 
-## 📦 Installation
+![image](https://github.com/user-attachments/assets/5f416c83-07c5-45b7-94f5-c5426122c375)
 
-```bash
-git clone
-cd cal-score
-npm install
-npm start
-```
-
-## Usage
-- Click "Tạo học kì" to add a new semester.
-- Add subjects to each semester using the "+" button.
-- Enter subject name, select score and credit.
-- Click "Tính điểm" to calculate the GPA.
-
-![image](https://github.com/user-attachments/assets/f83db3d9-b892-44aa-a5a4-b26d68ae1a8f)
 
