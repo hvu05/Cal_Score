@@ -1,0 +1,84 @@
+body{
+    background: linear-gradient(135deg, #F5FAFE, #E6F7FF);    
+}
+.menu{
+    display: flex;
+    justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* đảm bảo menu nổi trên các thành phần khác */
+  background-color: white; /* hoặc màu bạn muốn, để không bị trong suốt */
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* tạo hiệu ứng đổ bóng nhẹ */
+    &__calScore{
+        margin: 10px 10px;
+        padding: 20px 20px;
+    }
+}
+
+.subject{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    margin-left: 380px;
+    gap: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    label{
+        display: flex;
+        min-width: 110px;
+        font-weight: bold;
+    }
+    &:hover{
+        transform: scale(1.03);
+    }
+    transition: transform 0.2s ease-in-out;
+    &__score{
+        min-width: 100px;
+    }
+    &__credit{
+        min-width: 100px;
+    }
+}
+.sem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    gap: 10px;
+    margin-left: 570px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+    background-color: #E5F8FF;
+    padding: 15px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    border: solid #c5e7f5;
+    &:hover{
+        transform: scale(1.05);
+    }
+    transition: transform 0.2s ease-in-out;
+    label{
+        font-weight: bold;
+        min-width: 60px;
+    }
+}
+.GPA{
+    display: flex;
+    justify-content: center;
+    color: #144183;
+    font-size: 20px;
+    font-weight: bold;
+}
+.CRE{
+    display: flex;
+    justify-content: center;
+    color: #144183;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;   
+}
