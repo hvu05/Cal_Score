@@ -18,10 +18,11 @@ body{
 
 .subject{
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 750px;
-    margin-left: 380px;
+    margin: 0 auto;
+    // margin-left: 380px;
     gap: 10px;
     margin-bottom: 10px;
     background-color: white;
@@ -49,8 +50,9 @@ body{
     justify-content: center;
     align-items: center;
     width: 350px;
+    margin: 0 auto;
     gap: 10px;
-    margin-left: 570px;
+    // margin-left: 570px;
     margin-bottom: 10px;
     margin-top: 40px;
     background-color: #E5F8FF;
@@ -67,18 +69,29 @@ body{
         min-width: 60px;
     }
 }
-.GPA{
-    display: flex;
-    justify-content: center;
+// .GPA{
+//     display: flex;
+//     justify-content: center;
+//     color: #144183;
+//     font-size: 20px;
+//     font-weight: bold;
+// }
+// .CRE{
+//     display: flex;
+//     justify-content: center;
+//     color: #144183;
+//     font-size: 20px;
+//     font-weight: bold;
+//     margin-bottom: 30px;   
+// }
+.block-gpa {
+    position: fixed;       /* hoặc sticky tùy nhu cầu */
+    bottom: 20px;          /* cách đáy 20px */
+    right: 40px;           /* cách phải 40px */
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     color: #144183;
-    font-size: 20px;
     font-weight: bold;
-}
-.CRE{
-    display: flex;
-    justify-content: center;
-    color: #144183;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 30px;   
 }
