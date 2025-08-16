@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Select, Input, Button, Checkbox, Popconfirm } from 'antd';
 
 import './PageByMe.scss'
+import CountUp from "../Animation/Title";
+import Dock from "../Animation/Title";
 function Page() {
-    const [score, setScore] = useState({Score: 0, Credit: 0})
+    const [score, setScore] = useState({ Score: 0, Credit: 0 })
     const [show, setShow] = useState(false)
 
     const [subject, setSubject] = useState(() => {
@@ -47,7 +49,7 @@ function Page() {
         })
         var GPA = sumScore / sumCredit
         console.log(score)
-        setScore({Score: GPA, Credit: sumCredit})
+        setScore({ Score: GPA, Credit: sumCredit })
         console.log(score)
         setShow(true)
     }
@@ -115,8 +117,8 @@ function Page() {
         { value: 2, label: 'C (2.00)' },
         { value: 1.5, label: 'D+ (1.5)' },
         { value: 1, label: 'D (1.00)' },
-        { value: 0, label: 'F (0.00)'},
-        { value: -1, label: 'Chưa tính'}
+        { value: 0, label: 'F (0.00)' },
+        { value: -1, label: 'Chưa tính' }
     ]
     const creditOptions = [
         { value: 5, label: '5 tín chỉ' },
@@ -180,9 +182,12 @@ function Page() {
                     </div>
                 )
             ))}
+            <div style={{marginBottom: '60px'}}></div>
             {/* <div>===================================================================</div> */}
-            <div className="GPA">GPA: {show && ` ${score.Score}`}</div>
-            <div className="CRE">Số tín chỉ tích lũy: {show && ` ${score.Credit}`}</div>
+            <div className='block-gpa'>
+                <div className="GPA">GPA: {show && ` ${score.Score.toFixed(4)}`}</div>
+                <div className="CRE">Số tín chỉ tích lũy: {show && ` ${score.Credit}`}</div>
+            </div>
         </>
     )
 }
